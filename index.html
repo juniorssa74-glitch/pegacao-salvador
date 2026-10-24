@@ -17,7 +17,7 @@ main{width:100%;max-width:440px;padding:28px 18px 40px;text-align:center}
 @keyframes pulse{50%{box-shadow:0 0 90px rgba(255,30,30,.6)}}
 h1{margin:18px 0 4px;font-size:1.7rem;font-weight:700;letter-spacing:.04em;text-shadow:0 0 14px var(--red)}
 .bio{margin:0 auto 22px;max-width:34ch;color:var(--mute);font-size:.98rem;line-height:1.45}
-h2{margin:26px 0 10px;font-size:.95rem;font-weight:700;color:var(--red);text-align:left;text-shadow:0 0 8px rgba(255,42,42,.6)}
+h2{margin:26px 0 10px;font-size:.95rem;font-weight:700;color:#fff;text-align:left;text-shadow:0 0 8px rgba(255,255,255,.45)}
 .links{display:grid;gap:12px}
 .link{display:flex;align-items:center;gap:14px;padding:15px 18px;border:1.5px solid var(--red);border-radius:999px;color:var(--ink);text-decoration:none;font-weight:700;font-size:1.02rem;background:rgba(255,42,42,.05);box-shadow:0 0 10px rgba(255,42,42,.35),inset 0 0 10px rgba(255,42,42,.12);transition:box-shadow .2s,background .2s,transform .1s}
 .link:hover,.link:focus-visible{background:rgba(255,42,42,.18);box-shadow:0 0 22px rgba(255,42,42,.7),inset 0 0 14px rgba(255,42,42,.25);outline:none}
@@ -46,9 +46,16 @@ html:not(.ok){overflow:hidden}
 .sim{background:#fff;color:#000;border-color:#fff;box-shadow:0 0 18px rgba(255,255,255,.35)}
 .nao{background:var(--red);color:#fff;border-color:var(--red);box-shadow:0 0 18px rgba(255,42,42,.6)}
 .gbtns button:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+.words{position:relative;height:44px;margin:30px 0 0;font-weight:700;font-size:1.5rem;letter-spacing:.18em;color:var(--red);text-shadow:0 0 14px var(--red)}
+.words span{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0;animation:word 10s infinite}
+.words span:nth-child(2){animation-delay:2s}
+.words span:nth-child(3){animation-delay:4s}
+.words span:nth-child(4){animation-delay:6s}
+.words span:nth-child(5){animation-delay:8s}
+@keyframes word{0%{opacity:0;transform:translateY(14px);filter:blur(4px)}4%{opacity:1;transform:translateY(0);filter:blur(0)}16%{opacity:1;transform:translateY(0);filter:blur(0)}20%{opacity:0;transform:translateY(-14px);filter:blur(4px)}100%{opacity:0;transform:translateY(14px)}}
 .ad169{aspect-ratio:16/9;min-height:0}
 footer{margin-top:34px;color:var(--mute);font-size:.78rem}
-@media (prefers-reduced-motion:reduce){.logo{animation:none}.link{transition:none}}
+@media (prefers-reduced-motion:reduce){.logo{animation:none}.link{transition:none}.words{height:auto;display:flex;flex-wrap:wrap;justify-content:center;gap:6px 14px;font-size:1rem}.words span{position:static;opacity:1;animation:none}}
 </style>
 <script>try{if(localStorage.getItem('ps18')==='1')document.documentElement.classList.add('ok')}catch(e){}</script>
 <script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments);};</script>
@@ -70,13 +77,12 @@ footer{margin-top:34px;color:var(--mute);font-size:.78rem}
   <h2>Grupos</h2>
   <nav class="links" id="redes"></nav>
 
-  <!-- ANÚNCIO 1: cole aqui o código do seu anúncio (AdSense, etc.) e apague o texto de dentro -->
-  <div class="ad">ANUNCIE AQUI</div>
+  <div class="words" aria-hidden="true"><span>CRUISING</span><span>BANHEIRÃO</span><span>SAUNAS</span><span>PEGAÇÃO</span><span>SURUBAS</span></div>
 
   <h2>Redes</h2>
   <nav class="links" id="grupos"></nav>
 
-  <!-- ANÚNCIO 2 (formato 16:9) -->
+  <!-- ANÚNCIO: cole aqui o código do seu anúncio (AdSense, etc.) e apague o texto de dentro (formato 16:9) -->
   <div class="ad ad169">ANUNCIE AQUI</div>
 
   <footer>© Pegação Salvador</footer>
