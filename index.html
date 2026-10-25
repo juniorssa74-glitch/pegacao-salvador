@@ -53,6 +53,8 @@ html:not(.ok){overflow:hidden}
 .words span:nth-child(4){animation-delay:6s}
 .words span:nth-child(5){animation-delay:8s}
 @keyframes word{0%{opacity:0;transform:translateY(14px);filter:blur(4px)}4%{opacity:1;transform:translateY(0);filter:blur(0)}16%{opacity:1;transform:translateY(0);filter:blur(0)}20%{opacity:0;transform:translateY(-14px);filter:blur(4px)}100%{opacity:0;transform:translateY(14px)}}
+.cnt{margin-top:8px;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase}
+.cnt b{color:var(--red);font-size:1rem;text-shadow:0 0 10px var(--red)}
 .ad169{aspect-ratio:16/9;min-height:0}
 footer{margin-top:34px;color:var(--mute);font-size:.78rem}
 @media (prefers-reduced-motion:reduce){.logo{animation:none}.link{transition:none}.words{height:auto;display:flex;flex-wrap:wrap;justify-content:center;gap:6px 14px;font-size:1rem}.words span{position:static;opacity:1;animation:none}}
@@ -85,7 +87,7 @@ footer{margin-top:34px;color:var(--mute);font-size:.78rem}
   <!-- ANÚNCIO: cole aqui o código do seu anúncio (AdSense, etc.) e apague o texto de dentro (formato 16:9) -->
   <div class="ad ad169">ANUNCIE AQUI</div>
 
-  <footer>© Pegação Salvador</footer>
+  <footer>© Pegação Salvador<div class="cnt" id="cnt" hidden>Acessos: <b id="n">0</b></div></footer>
 </main>
 <script>
 /* EDITE AQUI: nome, link e descrição de cada botão */
@@ -122,6 +124,20 @@ function openPreview(l){
   document.addEventListener('keydown',esc);
   document.body.appendChild(o);go.focus();
 }
+(async()=>{
+  const K='psalvador_x7k2q9vm4t',B='https://countapi.mileshilliard.com/api/v1/';
+  let counted=false;try{counted=sessionStorage.getItem('ps_hit')==='1'}catch(e){}
+  try{
+    const r=await fetch(B+(counted?'get/':'hit/')+K);
+    if(!r.ok)throw 0;
+    const d=await r.json();
+    const v=[d.value,d.count,d.visit,d.hits].find(x=>typeof x==='number');
+    if(v===undefined)throw 0;
+    try{sessionStorage.setItem('ps_hit','1')}catch(e){}
+    document.getElementById('n').textContent=v.toLocaleString('pt-BR');
+    document.getElementById('cnt').hidden=false;
+  }catch(e){}
+})();
 const mainEl=document.querySelector('main');
 if(!document.documentElement.classList.contains('ok')){mainEl.inert=true;document.getElementById('yes').focus();}
 document.getElementById('yes').addEventListener('click',()=>{try{localStorage.setItem('ps18','1')}catch(e){}document.documentElement.classList.add('ok');mainEl.inert=false;});
