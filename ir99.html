@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Abrindo o 99…</title>
+<style>
+  :root{--bg:#0b0607;--text:#f6eded;--muted:#b9a4a7;--y:#ffd500}
+  *{box-sizing:border-box}
+  body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;background:var(--bg);
+    color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;padding:24px 16px;text-align:center}
+  .box{max-width:420px;width:100%}
+  .logo{display:inline-flex;align-items:center;justify-content:center;width:84px;height:84px;border-radius:20px;
+    background:var(--y);color:#000;font-weight:900;font-style:italic;font-size:44px;letter-spacing:-.06em;margin-bottom:18px}
+  h1{font-size:22px;margin:0 0 6px}
+  p{color:var(--muted);font-size:15px;line-height:1.5;margin:0 0 20px}
+  .dest{color:var(--text);font-weight:600}
+  a.btn{display:block;text-decoration:none;font-weight:700;font-size:17px;padding:15px 18px;border-radius:999px;margin-bottom:10px}
+  .main{background:var(--y);color:#000}
+  .alt{border:1px solid #3a1a1f;color:var(--text)}
+  small{display:block;color:var(--muted);font-size:12px;margin-top:14px}
+</style>
+</head>
+<body>
+<div class="box">
+  <div class="logo">99</div>
+  <h1>Abrindo o 99…</h1>
+  <p>Destino: <span class="dest" id="dest">—</span></p>
+  <a class="btn main" id="abrir" href="#">Abrir no app 99</a>
+  <a class="btn alt" id="loja" href="#">Não tenho o app — baixar</a>
+  <a class="btn alt" id="copiar" href="#">Copiar endereço</a>
+  <small id="msg">Se o app não abrir sozinho, toque em “Abrir no app 99”.</small>
+</div>
+<script>
+/* Uso: ir99.html?lat=-13.00&lng=-38.52&n=Nome%20do%20lugar&a=Endereço
+   Abre o app 99 com o destino preenchido. */
+const p = new URLSearchParams(location.search);
+const lat = p.get("lat"), lng = p.get("lng");
+const nome = p.get("n") || "Destino";
+const end = p.get("a") || nome;
+document.getElementById("dest").textContent = nome;
+
+const q = (lat && lng)
+  ? `dropoff_latitude=${encodeURIComponent(lat)}&dropoff_longitude=${encodeURIComponent(lng)}&dropoff_title=${encodeURIComponent(nome)}&deep_link_product_id=316&client_id=MAP_123`
+  : "";
+const ua = navigator.userAgent;
+const android = /Android/i.test(ua);
+const ios = /iPhone|iPad|iPod/i.test(ua) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+const PLAY = "https://play.google.com/store/apps/details?id=com.taxis99";
+const APPSTORE = "https://apps.apple.com/br/app/id553663691";
+const scheme = `taxis99://call?${q}`;
+const intent = `intent://call?${q}#Intent;scheme=taxis99;package=com.taxis99;S.browser_fallback_url=${encodeURIComponent(PLAY)};end`;
+const appLink = android ? intent : scheme;
+
+document.getElementById("abrir").href = appLink;
+document.getElementById("loja").href = android ? PLAY : APPSTORE;
+document.getElementById("copiar").addEventListener("click", e => {
+  e.preventDefault();
+  (navigator.clipboard ? navigator.clipboard.writeText(end) : Promise.reject()).then(
+    () => document.getElementById("msg").textContent = "Endereço copiado! Cole no destino do 99.",
+    () => document.getElementById("msg").textContent = end);
+});
+
+if (android || ios) {
+  // tenta abrir o app sozinho assim que a página carrega
+  location.href = appLink;
+} else {
+  document.querySelector("h1").textContent = "Abra este link no celular";
+  document.getElementById("msg").textContent = "O app 99 só abre em celulares (Android ou iPhone).";
+}
+</script>
+</body>
+</html>
