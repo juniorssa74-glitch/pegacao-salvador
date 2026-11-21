@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guia Pegação Salvador — O guia que a cidade não te conta</title>
+<meta name="description" content="15 lugares de pegação em Salvador com endereço, preço, horário e como chegar em 1 toque. Guia digital para quem vem de fora.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800;900&family=Permanent+Marker&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#070405; --bg2:#0d0709; --card:#160b0e; --card2:#1d0f12; --line:#3a1a1f;
+    --red:#e3122b; --red2:#ff3b52; --red-glow:rgba(227,18,43,.45);
+    --text:#f6eded; --muted:#b9a4a7; --y99:#ffd500;
+    --max:1080px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}
+  img,video{max-width:100%;display:block}
+  a{color:inherit}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+  section{padding:84px 0;position:relative}
+  .alt{background:var(--bg2)}
+  .center{text-align:center}
+  .h2{font-family:'Bebas Neue';font-weight:400;font-size:clamp(40px,6vw,64px);line-height:.95;letter-spacing:.01em;margin:0 0 12px}
+  .h2 em{font-style:normal;color:var(--red)}
+  .lead{color:var(--muted);font-size:17px;max-width:620px;margin:0 auto}
+  .kicker{font-family:'Permanent Marker';color:var(--red2);font-size:22px;margin-bottom:6px}
+
+  /* botão principal */
+  .cta{display:inline-flex;align-items:center;gap:12px;background:var(--red);color:#fff;text-decoration:none;
+    font-weight:800;font-size:18px;padding:18px 34px;border-radius:999px;box-shadow:0 0 0 0 var(--red-glow),0 12px 40px rgba(227,18,43,.45);
+    animation:pulse 2.2s infinite;transition:transform .15s}
+  .cta:hover{transform:translateY(-2px) scale(1.02)}
+  .cta svg{width:20px;height:20px}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(227,18,43,.55),0 12px 40px rgba(227,18,43,.45)}70%{box-shadow:0 0 0 18px rgba(227,18,43,0),0 12px 40px rgba(227,18,43,.45)}100%{box-shadow:0 0 0 0 rgba(227,18,43,0),0 12px 40px rgba(227,18,43,.45)}}
+  .trust{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 22px;margin-top:18px;font-size:13px;color:var(--muted)}
+  .trust span{display:inline-flex;align-items:center;gap:6px}
+  .trust svg{width:15px;height:15px;color:var(--red2)}
+
+  /* ---------- HERO ---------- */
+  .hero{padding:40px 0 90px;overflow:hidden;
+    background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(227,18,43,.28),transparent 70%),var(--bg)}
+  .topbar{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:34px}
+  .topbar img{width:54px;height:54px;border-radius:50%;box-shadow:0 0 24px var(--red-glow)}
+  .topbar b{font-family:'Bebas Neue';font-size:26px;letter-spacing:.06em;font-weight:400}
+  .topbar b span{color:var(--red2)}
+  .badge{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,59,82,.5);background:rgba(227,18,43,.12);
+    color:var(--red2);font-size:13px;font-weight:700;letter-spacing:.04em;padding:7px 14px;border-radius:999px;margin-bottom:18px}
+  .badge i{width:8px;height:8px;border-radius:50%;background:var(--red2);box-shadow:0 0 10px var(--red2);animation:blink 1.2s infinite}
+  @keyframes blink{50%{opacity:.25}}
+  .hero h1{font-family:'Bebas Neue';font-weight:400;font-size:clamp(52px,8.5vw,96px);line-height:.9;margin:0 0 6px;letter-spacing:.01em}
+  .hero h1 em{font-style:normal;color:var(--red);text-shadow:0 0 30px rgba(227,18,43,.45)}
+  .hero .hook{font-family:'Permanent Marker';color:var(--red2);font-size:clamp(24px,3.4vw,34px);margin-bottom:6px}
+  .hero p.sub{color:#e9dcdd;font-size:clamp(16px,2vw,19px);max-width:640px;margin:16px auto 34px}
+  .hero p.sub b{color:#fff}
+  .stage{display:flex;justify-content:center;align-items:flex-end;gap:0;margin:0 auto 40px;position:relative;max-width:760px}
+  .phone{width:270px;aspect-ratio:9/19;border-radius:38px;background:#000;padding:10px;position:relative;z-index:3;
+    box-shadow:0 0 0 2px #2a1317,0 0 60px rgba(227,18,43,.45),0 30px 60px rgba(0,0,0,.7)}
+  .phone video{width:100%;height:100%;object-fit:cover;border-radius:29px}
+  .phone::before{content:"";position:absolute;top:18px;left:50%;transform:translateX(-50%);width:80px;height:22px;background:#000;border-radius:20px;z-index:2}
+  .sheet{width:230px;border-radius:12px;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,.7);border:1px solid var(--line);position:relative;z-index:1}
+  .sheet.l{transform:rotate(-8deg) translate(40px,10px)}
+  .sheet.r{transform:rotate(8deg) translate(-40px,10px)}
+  .sound{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:4;background:rgba(0,0,0,.75);border:1px solid rgba(255,255,255,.35);
+    color:#fff;font-size:13px;font-weight:700;border-radius:999px;padding:8px 14px;cursor:pointer;white-space:nowrap;font-family:inherit;
+    animation:blink 1.6s infinite}
+  .sound.off{display:none}
+
+  /* faixa de impacto entre o topo e a dor */
+  .faixa{position:relative;z-index:5;background:var(--red);transform:skewY(-2.5deg);margin:-26px 0 -26px;padding:30px 20px;
+    box-shadow:0 0 60px rgba(227,18,43,.55),0 20px 40px rgba(0,0,0,.5)}
+  .faixa p{transform:skewY(2.5deg);margin:0 auto;max-width:var(--max);text-align:center;font-family:'Bebas Neue';font-weight:400;
+    font-size:clamp(30px,5.2vw,60px);line-height:1;letter-spacing:.02em;color:#fff;text-shadow:0 2px 0 rgba(0,0,0,.25)}
+  .faixa .emoji{display:inline-block;animation:gota 1.8s ease-in-out infinite}
+  @keyframes gota{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-6px) rotate(-8deg)}}
+
+  /* ---------- DOR ---------- */
+  .pains{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:40px}
+  .pain{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px 20px;text-align:left}
+  .pain .ic{width:42px;height:42px;border-radius:12px;background:rgba(227,18,43,.14);display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+  .pain .ic svg{width:22px;height:22px;color:var(--red2)}
+  .pain h3{font-size:16px;margin:0 0 6px}
+  .pain p{font-size:14px;color:var(--muted);margin:0}
+  .punch{margin-top:38px;font-size:clamp(18px,2.4vw,22px);font-weight:700}
+  .punch em{font-style:normal;color:var(--red2)}
+
+  /* ---------- POR DENTRO ---------- */
+  .inside{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;margin-top:46px}
+  .gallery{position:relative;height:520px}
+  .gallery img{position:absolute;width:56%;border-radius:12px;border:1px solid var(--line);box-shadow:0 24px 60px rgba(0,0,0,.7)}
+  .gallery .g1{left:0;top:30px;transform:rotate(-6deg)}
+  .gallery .g2{left:22%;top:0;z-index:2}
+  .gallery .g3{right:0;top:40px;transform:rotate(6deg)}
+  .feat{display:flex;flex-direction:column;gap:14px}
+  .feat .f{text-align:left;display:flex;gap:14px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 18px}
+  .feat .f .ic{flex:none;width:40px;height:40px;border-radius:11px;background:rgba(227,18,43,.14);display:flex;align-items:center;justify-content:center}
+  .feat .f .ic svg{width:21px;height:21px;color:var(--red2)}
+  .feat h3{margin:0 0 2px;font-size:16px}
+  .feat p{margin:0;font-size:14px;color:var(--muted)}
+  .btnrow{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+  .mini{display:inline-flex;align-items:center;gap:6px;border-radius:999px;font-size:13px;font-weight:700;padding:6px 12px}
+  .mini.map{background:#fff;color:#111}.mini.uber{background:#000;color:#fff;border:1px solid #444}
+  .mini.n99{background:var(--y99);color:#000}.mini.n99 b{background:#000;color:var(--y99);border-radius:5px;padding:0 4px;font-style:italic;font-weight:900}
+
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:54px}
+  .step{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;text-align:left}
+  .step .n{width:34px;height:34px;border-radius:50%;background:var(--red);display:flex;align-items:center;justify-content:center;font-weight:800;margin-bottom:12px}
+  .step h3{margin:0 0 4px;font-size:17px}
+  .step p{margin:0;font-size:14px;color:var(--muted)}
+
+  /* ---------- CAPÍTULOS ---------- */
+  .chapters{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:44px}
+  .chap{border-radius:20px;overflow:hidden;position:relative;aspect-ratio:3/4;border:1px solid var(--line);background:#111}
+  .chap img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .chap::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 35%,rgba(7,4,5,.95))}
+  .chap .t{position:absolute;left:18px;right:18px;bottom:16px;z-index:2;text-align:left}
+  .chap .t small{font-family:'Permanent Marker';color:var(--red2);font-size:16px}
+  .chap .t b{display:block;font-family:'Bebas Neue';font-weight:400;font-size:40px;line-height:.95}
+  .chap .t span{font-size:13px;color:var(--muted)}
+  .lock{position:absolute;top:14px;right:14px;z-index:2;background:rgba(0,0,0,.6);border:1px solid #444;border-radius:999px;padding:4px 10px;font-size:11px;font-weight:700;letter-spacing:.06em}
+
+  .bonus{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:22px}
+  .bon{background:var(--card);border:1px dashed rgba(255,59,82,.45);border-radius:18px;padding:20px;text-align:left}
+  .bon .tag{font-size:11px;font-weight:800;letter-spacing:.1em;color:var(--red2);text-transform:uppercase}
+  .bon h3{margin:6px 0 4px;font-size:16px}
+  .bon p{margin:0;font-size:14px;color:var(--muted)}
+
+  /* ---------- DEPOIMENTOS ---------- */
+  .tests{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+  .test{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;text-align:left}
+  .stars{color:var(--y99);letter-spacing:2px;font-size:15px;margin-bottom:10px}
+  .test p{margin:0 0 14px;font-size:15px}
+  .test .who{font-size:13px;color:var(--muted)}
+  .test .who b{color:var(--text)}
+  .placeholder-note{margin-top:14px;font-size:12px;color:#7d6a6d}
+
+  /* ---------- OFERTA ---------- */
+  .offer{max-width:520px;margin:0 auto;background:linear-gradient(180deg,#1f0b10,#120709);border:2px solid var(--red);border-radius:28px;
+    padding:34px 30px;text-align:center;box-shadow:0 0 80px rgba(227,18,43,.3)}
+  .offer .flag{display:inline-block;background:var(--red);color:#fff;font-size:12px;font-weight:800;letter-spacing:.08em;padding:6px 14px;border-radius:999px;margin-bottom:14px}
+  .offer h2{font-family:'Bebas Neue';font-weight:400;font-size:46px;line-height:.95;margin:0 0 18px}
+  .offer ul{list-style:none;padding:0;margin:0 auto 22px;text-align:left;max-width:360px}
+  .offer li{display:flex;gap:10px;padding:7px 0;font-size:15px;border-bottom:1px dashed var(--line)}
+  .offer li svg{flex:none;width:18px;height:18px;color:var(--red2);margin-top:3px}
+  .price-from{color:var(--muted);font-size:15px}
+  .price-from s{color:#8a7578}
+  .price{font-family:'Bebas Neue';font-size:96px;line-height:.9;color:#fff;margin:4px 0}
+  .price small{font-size:40px;vertical-align:top;margin-right:4px}
+  .price-note{color:var(--muted);font-size:13px;margin-bottom:18px}
+  .timer-l{font-size:13px;color:var(--muted);margin-bottom:8px}
+  .timer{display:flex;justify-content:center;gap:10px;margin-bottom:24px}
+  .timer div{background:#000;border:1px solid var(--line);border-radius:12px;min-width:66px;padding:8px 6px}
+  .timer b{display:block;font-family:'Bebas Neue';font-size:40px;line-height:1;font-weight:400}
+  .timer span{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+  .secure{margin-top:14px;font-size:12px;color:var(--muted);display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
+
+  /* ---------- GARANTIA ---------- */
+  .guarantee{display:flex;gap:24px;align-items:center;max-width:760px;margin:0 auto;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:28px}
+  .seal{flex:none;width:110px;height:110px;border-radius:50%;border:3px solid var(--red);display:flex;flex-direction:column;align-items:center;justify-content:center;
+    box-shadow:0 0 30px var(--red-glow)}
+  .seal b{font-family:'Bebas Neue';font-size:46px;line-height:.9;font-weight:400}
+  .seal span{font-size:11px;font-weight:800;letter-spacing:.1em}
+  .guarantee h3{margin:0 0 6px;font-size:22px}
+  .guarantee p{margin:0;color:var(--muted)}
+
+  /* ---------- FAQ ---------- */
+  .faq{max-width:760px;margin:40px auto 0}
+  details{border-bottom:1px solid var(--line);padding:4px 0}
+  summary{cursor:pointer;list-style:none;padding:16px 4px;font-weight:600;display:flex;justify-content:space-between;align-items:center;gap:12px}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";font-size:24px;color:var(--red2);transition:transform .2s}
+  details[open] summary::after{transform:rotate(45deg)}
+  details p{margin:0 4px 16px;color:var(--muted)}
+
+  /* ---------- FINAL ---------- */
+  .final{background:radial-gradient(ellipse 70% 80% at 50% 100%,rgba(227,18,43,.3),transparent 70%),var(--bg)}
+  footer{padding:30px 0 100px;text-align:center;font-size:12px;color:#7d6a6d;border-top:1px solid var(--line)}
+  footer .adult{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;border:2px solid var(--red);color:#fff;font-weight:800;font-size:12px;margin-bottom:8px}
+
+  /* barra fixa no celular */
+  .sticky{position:fixed;left:0;right:0;bottom:0;z-index:50;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(7,4,5,.92);
+    backdrop-filter:blur(8px);border-top:1px solid var(--line);display:none;align-items:center;gap:12px;transform:translateY(110%);transition:transform .3s}
+  .sticky.on{transform:none}
+  .sticky .p{font-size:12px;color:var(--muted);line-height:1.2}
+  .sticky .p b{display:block;font-size:20px;color:#fff;font-family:'Bebas Neue';font-weight:400;letter-spacing:.02em}
+  .sticky a{flex:1;text-align:center;background:var(--red);color:#fff;text-decoration:none;font-weight:800;border-radius:999px;padding:13px 10px;font-size:15px}
+
+  /* animação de entrada */
+  .rv{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s}
+  .rv.on{opacity:1;transform:none}
+
+  @media (max-width:900px){
+    .pains{grid-template-columns:1fr 1fr}
+    .inside{grid-template-columns:1fr}
+    .gallery{height:420px}
+    .chapters{grid-template-columns:1fr 1fr}
+    .steps,.tests,.bonus{grid-template-columns:1fr}
+  }
+  @media (max-width:600px){
+    section{padding:64px 0}
+    .sheet{display:none}
+    .phone{width:240px}
+    .pains{grid-template-columns:1fr}
+    .gallery{height:340px}
+    .guarantee{flex-direction:column;text-align:center}
+    .sticky{display:flex}
+    .cta{font-size:16px;padding:16px 26px}
+  }
+</style>
+</head>
+<body>
+
+<!-- =====================================================================
+     CONFIGURAÇÃO — troque aqui preço, link de checkout e garantia
+     ===================================================================== -->
+<script>
+const CONFIG = {
+  preco: "15,00",            // preço de venda (igual ao checkout da Kiwify)
+  precoDe: "47,00",          // preço "de" (riscado)
+  checkout: "https://pay.kiwify.com.br/lrY80d9", // link do checkout (Kiwify)
+  garantiaDias: 7
+};
+</script>
+
+<!-- ================= HERO ================= -->
+<header class="hero center">
+  <div class="wrap">
+    <div class="topbar"><img src="img/logo.png" alt=""><b>Guia <span>Pegação</span> Salvador</b></div>
+    <div class="badge"><i></i> PROMOÇÃO DE LANÇAMENTO</div>
+    <div class="hook">Vem pra Salvador?</div>
+    <h1>O guia que a cidade<br><em>não te conta</em></h1>
+    <p class="sub">Os <b>15 lugares de pegação</b> que só quem mora aqui conhece — saunas, cruising bars, praias e boates — com <b>endereço, preço, horário e como chegar em 1 toque.</b></p>
+
+    <div class="stage rv">
+      <img class="sheet l" src="img/ebook-cover.png" alt="Capa do guia">
+      <div class="phone">
+        <video id="vtopo" src="img/video-topo.mp4" poster="img/video-topo-poster.png" autoplay muted loop playsinline></video>
+        <button class="sound" id="som" type="button">🔊 Toque para ouvir</button>
+      </div>
+      <img class="sheet r" src="img/ebook-saunas-3-blur.png" alt="Página do guia">
+    </div>
+
+    <a class="cta js-cta" href="#oferta">Quero meu guia agora <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <div class="trust">
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M13 2 3 14h9l-1 8 10-12h-9z"/></svg>Acesso imediato</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/></svg>Funciona no celular</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 2 4 5v6c0 5 3.5 9.5 8 11 4.5-1.5 8-6 8-11V5z"/></svg>Garantia de <span class="js-gar">7</span> dias</span>
+    </div>
+  </div>
+</header>
+
+<!-- ================= FAIXA ================= -->
+<div class="faixa"><p>Chega de perder tempo procurando lugares pra curtir em Salvador <span class="emoji">💦</span></p></div>
+
+<!-- ================= POR DENTRO ================= -->
+<section class="alt center">
+  <div class="wrap">
+    <div class="kicker rv">Chegue sabendo de tudo</div>
+    <h2 class="h2 rv">Tudo o que importa,<br><em>na palma da mão</em></h2>
+    <p class="lead rv">Cada lugar tem uma ficha completa, feita por quem conhece e com relatos de quem já foi.</p>
+
+    <div class="inside">
+      <div class="gallery rv">
+        <img class="g1" src="img/ebook-praias-1-blur.png" alt="">
+        <img class="g2" src="img/ebook-saunas-3-blur.png" alt="">
+        <img class="g3" src="img/ebook-boates-1-blur.png" alt="">
+      </div>
+      <div class="feat">
+        <div class="f rv"><div class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg></div>
+          <div><h3>Um toque e você chega</h3><p>Abra no mapa ou chame o carro com o destino já preenchido.</p>
+          <div class="btnrow"><span class="mini map">📍 Mapa</span><span class="mini uber">Uber</span><span class="mini n99">Ir de <b>99</b></span></div></div></div>
+        <div class="f rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+          <div><h3>Preço, horário e público</h3><p>Saiba quanto vai gastar, quando ir e quem você vai encontrar.</p></div></div>
+        <div class="f rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+          <div><h3>Relatos sem filtro</h3><p>O que é bom e o que não é. Sem propaganda de estabelecimento.</p></div></div>
+        <div class="f rv"><div class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+          <div><h3>Vídeos e mapas de como chegar</h3><p>Para os lugares mais escondidos, o passo a passo até a porta.</p></div></div>
+      </div>
+    </div>
+
+    <div class="steps">
+      <div class="step rv"><div class="n">1</div><h3>Garanta seu guia</h3><p>Pagamento rápido e acesso liberado na hora no seu e-mail.</p></div>
+      <div class="step rv"><div class="n">2</div><h3>Abra no celular</h3><p>É um PDF leve: salve no celular e consulte quando quiser.</p></div>
+      <div class="step rv"><div class="n">3</div><h3>Escolha e vá</h3><p>Toque no endereço e chegue sem decorar nada.</p></div>
+    </div>
+    <div style="margin-top:44px" class="rv"><a class="cta js-cta" href="#oferta">Quero meu guia agora <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </div>
+</section>
+
+<!-- ================= O QUE VOCÊ RECEBE ================= -->
+<section class="center">
+  <div class="wrap">
+    <div class="kicker rv">Seu roteiro pronto</div>
+    <h2 class="h2 rv"><span class="js-ncap">4</span> capítulos, <em><span class="js-total">15</span> lugares</em></h2>
+    <p class="lead rv">Do clássico ao mais escondido. Os nomes só aparecem dentro do guia 😉</p>
+    <div class="chapters" id="chapters">
+      <div class="chap rv"><img src="img/cap-1.jpg" alt="" loading="lazy"><span class="lock">🔒 NO GUIA</span><div class="t"><small>Capítulo 1</small><b>Cruising Bar</b></div></div>
+      <div class="chap rv"><img src="img/cap-2.jpg" alt="" loading="lazy"><span class="lock">🔒 NO GUIA</span><div class="t"><small>Capítulo 2</small><b>Saunas</b></div></div>
+      <div class="chap rv"><img src="img/cap-3.jpg" alt="" loading="lazy"><span class="lock">🔒 NO GUIA</span><div class="t"><small>Capítulo 3</small><b>Praias</b></div></div>
+      <div class="chap rv"><img src="img/cap-4.jpg" alt="" loading="lazy"><span class="lock">🔒 NO GUIA</span><div class="t"><small>Capítulo 4</small><b>Boates</b></div></div>
+    </div>
+    <div class="bonus">
+      <div class="bon rv"><span class="tag">Incluso</span><h3>Botões Mapa, Uber e 99</h3><p>Em todos os endereços, com destino já preenchido.</p></div>
+      <div class="bon rv"><span class="tag">Incluso</span><h3>Vídeos de como chegar</h3><p>O caminho até a porta dos lugares mais escondidos.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= OFERTA ================= -->
+<section class="alt" id="oferta">
+  <div class="wrap">
+    <div class="offer rv">
+      <div class="flag">OFERTA DE LANÇAMENTO</div>
+      <h2>Antes de viajar,<br><span style="color:var(--red)">garanta o seu</span></h2>
+      <ul>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg><span>Guia completo com <b class="js-total">15</b> lugares em <b class="js-ncap">4</b> capítulos</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg><span>Endereço, preço, horário e público de cada lugar</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg><span>Botões de Mapa, Uber e 99 em 1 toque</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg><span>Vídeos e mapas de como chegar</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg><span>Garantia de <span class="js-gar">7</span> dias</span></li>
+      </ul>
+      <div class="price-from">de <s>R$ <span class="js-de">47,00</span></s> por apenas</div>
+      <div class="price"><small>R$</small><span class="js-preco">19,90</span></div>
+      <div class="price-note">pagamento único · ou 3x de R$ 5,35 no cartão</div>
+      <div class="timer-l">A promoção de lançamento termina em:</div>
+      <div class="timer"><div><b id="th">00</b><span>horas</span></div><div><b id="tm">00</b><span>min</span></div><div><b id="ts">00</b><span>seg</span></div></div>
+      <a class="cta js-cta" href="#oferta" style="width:100%;justify-content:center">Quero meu guia agora <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <div class="secure"><span>🔒 Compra 100% segura</span><span>🤫 Compra discreta</span><span>📲 PDF no celular</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= GARANTIA ================= -->
+<section class="center" style="padding-top:60px;padding-bottom:60px">
+  <div class="wrap">
+    <div class="guarantee rv">
+      <div class="seal"><b class="js-gar">7</b><span>DIAS</span></div>
+      <div style="text-align:left">
+        <h3>Garantia incondicional de <span class="js-gar">7</span> dias</h3>
+        <p>Abra o guia, confira tudo. Se não achar que vale, é só pedir o reembolso dentro do prazo e devolvemos 100% do valor. Sem perguntas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="alt">
+  <div class="wrap center">
+    <h2 class="h2 rv">Perguntas <em>frequentes</em></h2>
+    <div class="faq">
+      <details><summary>Como eu recebo o guia?</summary><p>Logo após o pagamento você recebe o acesso por e-mail. É um PDF que você salva no celular e consulta quando quiser.</p></details>
+      <details><summary>Funciona no celular?</summary><p>Sim, ele foi feito para o celular. Os botões de mapa, Uber e 99 abrem direto no seu aparelho.</p></details>
+      <details><summary>Preciso de internet para usar?</summary><p>Para ler o guia, não. Para abrir o mapa, o Uber, o 99 ou os vídeos, sim.</p></details>
+      <details><summary>A compra é discreta?</summary><p>Sim. O pagamento é processado pela plataforma de vendas e o guia chega só no seu e-mail.</p></details>
+      <details><summary>Quais são as formas de pagamento?</summary><p>Pix, cartão de crédito (em até 3x) e boleto, pela Kiwify.</p></details>
+      <details><summary>E se eu não gostar?</summary><p>Você tem <span class="js-gar">7</span> dias de garantia. Se não gostar, pede o reembolso e recebe 100% de volta.</p></details>
+      <details><summary>É conteúdo adulto?</summary><p>Sim, o guia é destinado a maiores de 18 anos.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FINAL ================= -->
+<section class="final center">
+  <div class="wrap">
+    <div class="kicker rv">Vem pra Salvador?</div>
+    <h2 class="h2 rv">Chegue sabendo<br><em>exatamente onde ir</em></h2>
+    <p class="lead rv" style="margin-bottom:30px">Sua viagem é curta. Não perca nenhuma noite procurando.</p>
+    <a class="cta js-cta rv" href="#oferta">Quero meu guia agora <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  </div>
+</section>
+
+<footer>
+  <div class="adult">+18</div>
+  <div>Conteúdo destinado exclusivamente a maiores de 18 anos.</div>
+  <div style="margin-top:6px">© <span id="ano"></span> Guia Pegação Salvador. Todos os direitos reservados.</div>
+</footer>
+
+<div class="sticky" id="sticky">
+  <div class="p">Oferta de lançamento<b>R$ <span class="js-preco">19,90</span></b></div>
+  <a class="js-cta" href="#oferta">Quero meu guia →</a>
+</div>
+
+<script>
+/* ?shot=1: modo captura (sem vídeo tocando e com tudo visível) */
+if (new URLSearchParams(location.search).has("shot")) { document.head.insertAdjacentHTML("beforeend", "<style>.rv{transition:none!important;opacity:1!important;transform:none!important}</style>"); const v = document.querySelector("video"); v.removeAttribute("autoplay"); v.removeAttribute("src"); v.load(); document.querySelectorAll(".rv").forEach(e => e.classList.add("on")); }
+/* som do vídeo do topo: começa mudo (regra dos navegadores) e liga com um toque */
+(() => {
+  const v = document.getElementById("vtopo"), b = document.getElementById("som");
+  if (!v || !b) return;
+  b.addEventListener("click", () => { v.muted = false; v.currentTime = 0; v.play(); b.classList.add("off"); });
+  v.addEventListener("click", () => { if (!v.muted) { v.muted = true; b.classList.remove("off"); } });
+})();
+/* aplica a configuração */
+document.querySelectorAll(".js-preco").forEach(e => e.textContent = CONFIG.preco);
+document.querySelectorAll(".js-de").forEach(e => e.textContent = CONFIG.precoDe);
+document.querySelectorAll(".js-gar").forEach(e => e.textContent = CONFIG.garantiaDias);
+document.querySelectorAll(".js-cta").forEach(a => { if (!a.closest(".offer") || CONFIG.checkout !== "#oferta") a.href = CONFIG.checkout; });
+document.querySelectorAll(".offer .js-cta").forEach(a => a.href = CONFIG.checkout);
+document.getElementById("ano").textContent = new Date().getFullYear();
+
+
+/* contador até a meia-noite (renova todo dia) */
+(() => {
+  const pad = n => String(n).padStart(2, "0");
+  const tick = () => {
+    const now = new Date(), end = new Date(now); end.setHours(24, 0, 0, 0);
+    let s = Math.max(0, Math.floor((end - now) / 1000));
+    document.getElementById("th").textContent = pad(Math.floor(s / 3600)); s %= 3600;
+    document.getElementById("tm").textContent = pad(Math.floor(s / 60));
+    document.getElementById("ts").textContent = pad(s % 60);
+  };
+  tick(); if (!new URLSearchParams(location.search).has("shot")) setInterval(tick, 1000);
+})();
+
+/* animação ao rolar */
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("on"); io.unobserve(e.target); } }), { threshold: .12 });
+document.querySelectorAll(".rv").forEach(el => new URLSearchParams(location.search).has("shot") ? el.classList.add("on") : io.observe(el));
+
+/* barra fixa aparece depois do topo (celular) */
+const sticky = document.getElementById("sticky");
+addEventListener("scroll", () => {
+  const oferta = document.getElementById("oferta").getBoundingClientRect();
+  const naOferta = oferta.top < innerHeight && oferta.bottom > 0;
+  sticky.classList.toggle("on", scrollY > 600 && !naOferta);
+}, { passive: true });
+</script>
+</body>
+</html>
