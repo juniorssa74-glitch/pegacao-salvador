@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Guia Pegação Salvador — O guia que a cidade não te conta</title>
-<meta name="description" content="15 lugares de pegação em Salvador com endereço, preço, horário e como chegar em 1 toque. Guia digital para quem vem de fora.">
+<title>Guia Pega-ção Salvador — O guia que a cidade não te conta</title>
+<meta name="description" content="15 lugares de pega-ção em Salvador com endereço, preço, horário e como chegar em 1 toque. Guia digital para quem vem de fora.">
 <meta name="robots" content="noindex">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800;900&family=Permanent+Marker&display=swap" rel="stylesheet">
@@ -68,6 +68,11 @@
     color:#fff;font-size:13px;font-weight:700;border-radius:999px;padding:8px 14px;cursor:pointer;white-space:nowrap;font-family:inherit;
     animation:blink 1.6s infinite}
   .sound.off{display:none}
+
+  /* "pegação" desfocado, mas ainda legível */
+  .bp{display:inline-block;filter:blur(2px)}
+  .bp-l{filter:blur(2px)}
+  .bp-s{filter:blur(1.4px)}
 
   /* faixa de impacto entre o topo e a dor */
   .faixa{position:relative;z-index:5;background:var(--red);transform:skewY(-2.5deg);margin:-26px 0 -26px;padding:30px 20px;
@@ -228,14 +233,14 @@ const CONFIG = {
 <!-- ================= HERO ================= -->
 <header class="hero center">
   <div class="wrap">
-    <div class="topbar"><img src="img/logo.png" alt=""><b>Guia <span>Pegação</span> Salvador</b></div>
+    <div class="topbar"><img src="img/logo-blur.png" alt=""><b>Guia <span class="bp bp-l">Pegação</span> Salvador</b></div>
     <div class="badge"><i></i> PROMOÇÃO DE LANÇAMENTO</div>
     <div class="hook">Vem pra Salvador?</div>
     <h1>O guia que a cidade<br><em>não te conta</em></h1>
-    <p class="sub">Os <b>15 lugares de pegação</b> que só quem mora aqui conhece — saunas, cruising bars, praias e boates — com <b>endereço, preço, horário e como chegar em 1 toque.</b></p>
+    <p class="sub">Os <b>15 lugares de <span class="bp">pegação</span></b> que só quem mora aqui conhece — saunas, cruising bars, praias e boates — com <b>endereço, preço, horário e como chegar em 1 toque.</b></p>
 
     <div class="stage rv">
-      <img class="sheet l" src="img/ebook-cover.png" alt="Capa do guia">
+      <img class="sheet l" src="img/ebook-cover-blur.png" alt="Capa do guia">
       <div class="phone">
         <video id="vtopo" src="img/video-topo.mp4" poster="img/video-topo-poster.png" autoplay muted loop playsinline></video>
         <button class="sound" id="som" type="button">🔊 Toque para ouvir</button>
@@ -375,7 +380,7 @@ const CONFIG = {
 <footer>
   <div class="adult">+18</div>
   <div>Conteúdo destinado exclusivamente a maiores de 18 anos.</div>
-  <div style="margin-top:6px">© <span id="ano"></span> Guia Pegação Salvador. Todos os direitos reservados.</div>
+  <div style="margin-top:6px">© <span id="ano"></span> Guia <span class="bp bp-s">Pegação</span> Salvador. Todos os direitos reservados.</div>
 </footer>
 
 <div class="sticky" id="sticky">
